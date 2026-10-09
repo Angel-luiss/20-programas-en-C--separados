@@ -941,6 +941,54 @@
               "cell": "a5ed0657-b5fe-4d0d-8603-bd3e04875e2a",
               "port": "9830f639-8770-4052-8a9b-5cfb42f74ebe"
             }
+          },
+          {
+            "position": {
+              "x": -280,
+              "y": -846.0000000000005
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Frontera de Confianza: Red Pública (Internet)"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "2856446b-b9c5-418d-92b1-22d829dc72f7",
+            "zIndex": 13,
+            "data": {
+              "type": "tm.Text",
+              "name": "Frontera de Confianza: Red Pública (Internet)",
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": -802,
+              "y": -350
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Frontera de Confianza: Red Interna Corporativa"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "a60137a8-bc3d-4c3b-a54f-543eb06c2271",
+            "zIndex": 14,
+            "data": {
+              "type": "tm.Text",
+              "name": "Frontera de Confianza: Red Interna Corporativa",
+              "hasOpenThreats": false
+            }
           }
         ],
         "description": "Flujo de datos transaccional, entidades y fronteras de confianza"
