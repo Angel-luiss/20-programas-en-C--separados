@@ -21,8 +21,58 @@
         "cells": [
           {
             "position": {
-              "x": -940,
-              "y": -820
+              "x": -570,
+              "y": -846.0000000000005
+            },
+            "size": {
+              "width": 200,
+              "height": 170
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "ffc30900-b708-4bd8-a3aa-8e91301092eb",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            }
+          },
+          {
+            "position": {
+              "x": -585,
+              "y": -580
+            },
+            "size": {
+              "width": 230,
+              "height": 310
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "66f69a2f-7dd1-4e19-b6a5-b3a9059559c4",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "a35a6ff5-b11e-4e9b-a3f6-23c97dd93ff5"
+              ],
+              "containedElements": [
+                "67495101-c9a5-4925-936f-7241b7ab03d5"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": -870,
+              "y": -791
             },
             "size": {
               "width": 112.5,
@@ -40,6 +90,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -123,7 +174,6 @@
               ]
             },
             "id": "1e1ab6e3-d290-4e78-9a04-cfcc1fdfb89d",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Cliente Web",
@@ -138,8 +188,8 @@
           },
           {
             "position": {
-              "x": -676,
-              "y": -880
+              "x": -610,
+              "y": -846
             },
             "size": {
               "width": 280,
@@ -150,13 +200,14 @@
                 "text": "Aplicacion Web Frontend"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -240,7 +291,6 @@
               ]
             },
             "id": "eb555124-403d-4dc6-ab69-48770c7387ae",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Aplicacion Web Frontend",
@@ -248,18 +298,40 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "4f0728b7-8139-4fb4-be2d-75276237e94e",
+                  "title": "Robo de credenciales en login",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Implementar MFA obligatorio y OAuth 2.0",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
             "position": {
-              "x": -610,
-              "y": -440
+              "x": -530,
+              "y": -350
             },
             "size": {
               "width": 120,
@@ -280,6 +352,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -363,7 +436,6 @@
               ]
             },
             "id": "67495101-c9a5-4925-936f-7241b7ab03d5",
-            "zIndex": 4,
             "data": {
               "type": "tm.Store",
               "name": "Base de Datos",
@@ -382,8 +454,8 @@
           },
           {
             "position": {
-              "x": -260,
-              "y": -630
+              "x": -90,
+              "y": -550
             },
             "size": {
               "width": 180,
@@ -401,6 +473,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -484,7 +557,6 @@
               ]
             },
             "id": "2c6aa022-6abd-46fc-8160-a822daa396df",
-            "zIndex": 5,
             "data": {
               "type": "tm.Actor",
               "name": "Pasarela de Pagos Externa",
@@ -496,6 +568,102 @@
               "providesAuthentication": false,
               "threats": []
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Consultas SQL",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "66f69a2f-7dd1-4e19-b6a5-b3a9059559c4"
+              ]
+            },
+            "labels": [
+              "Consultas SQL"
+            ],
+            "id": "a35a6ff5-b11e-4e9b-a3f6-23c97dd93ff5",
+            "source": {
+              "cell": "a5ed0657-b5fe-4d0d-8603-bd3e04875e2a",
+              "port": "27b81d46-e60a-4749-a2e5-dc6d3214d707"
+            },
+            "target": {
+              "cell": "67495101-c9a5-4925-936f-7241b7ab03d5",
+              "port": "892bd246-c028-448e-bc53-368ccb7faa29"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Transaccion de Pago (mTLS)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Transaccion de Pago (mTLS)"
+            ],
+            "id": "7a4eae09-9ec7-4053-82d7-0239829807db",
+            "source": {
+              "cell": "a5ed0657-b5fe-4d0d-8603-bd3e04875e2a",
+              "port": "1386f82f-71a9-43d5-b763-3f565dcb468d"
+            },
+            "target": {
+              "cell": "2c6aa022-6abd-46fc-8160-a822daa396df",
+              "port": "63cf01e4-f6e9-47b0-9006-980066720bc4"
+            },
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -535,18 +703,19 @@
             ],
             "id": "af04fd4c-e8f4-4c9a-998b-68648568e320",
             "source": {
-              "x": -827,
-              "y": -789
+              "cell": "1e1ab6e3-d290-4e78-9a04-cfcc1fdfb89d",
+              "port": "a7ddcf54-f4ca-44e2-aec9-835467432d1e"
             },
             "target": {
-              "x": -727,
-              "y": -689
-            }
+              "cell": "eb555124-403d-4dc6-ab69-48770c7387ae",
+              "port": "5bee0f4e-ac16-4519-a256-9d31825df0a9"
+            },
+            "vertices": []
           },
           {
             "position": {
-              "x": -626,
-              "y": -615
+              "x": -600,
+              "y": -580
             },
             "size": {
               "width": 260,
@@ -564,6 +733,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -647,7 +817,6 @@
               ]
             },
             "id": "a5ed0657-b5fe-4d0d-8603-bd3e04875e2a",
-            "zIndex": 11,
             "data": {
               "type": "tm.Process",
               "name": "Servicio Backend API",
@@ -660,7 +829,61 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Peticion API REST (JWT)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Peticion API REST (JWT)"
+            ],
+            "id": "6d949fad-90cf-4b40-bdf5-bc2d74ab0ce5",
+            "source": {
+              "x": -470,
+              "y": -670
+            },
+            "target": {
+              "cell": "a5ed0657-b5fe-4d0d-8603-bd3e04875e2a",
+              "port": "9830f639-8770-4052-8a9b-5cfb42f74ebe"
             }
           }
         ],
@@ -669,6 +892,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 3
   }
 }
